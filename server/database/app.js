@@ -91,6 +91,29 @@ app.get('/fetchDealer/:id', async (req, res) => {
     }
 });
 
+// Express route to fetch reviews by car make
+app.get('/fetchReviews/car/:carmake', async (req, res) => {
+  try {
+    const carMake = req.params.carmake;
+    const documents = await Reviews.find({ car_make: carMake });
+    res.json(documents);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching documents' });
+  }
+});
+
+// Express route to fetch reviews by car make and model
+app.get('/fetchReviews/car/:carmake/:model', async (req, res) => {
+  try {
+    const carMake = req.params.carmake;
+    const carModel = req.params.model;
+    const documents = await Reviews.find({ car_make: carMake, car_model: carModel });
+    res.json(documents);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching documents' });
+  }
+});
+
 //Express route to insert review
 app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
   data = JSON.parse(req.body);
