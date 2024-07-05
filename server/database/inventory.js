@@ -34,12 +34,6 @@ const carsSchema = new Schema({
 
 module.exports = mongoose.model('cars', carsSchema);
 
-
-const { Int32 } = require('mongodb');
-const mongoose = require('mongoose');
-
-const Schema = mongoose.Schema;
-
 const cars = new Schema({
 dealer_id: {
     type: Number,
