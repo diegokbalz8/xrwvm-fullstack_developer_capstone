@@ -82,7 +82,7 @@ def registration(request):
         user = User.objects.create_user(
             username=username,
             first_name=first_name,
-            ast_name=last_name,
+            last_name=last_name,
             password=password,
             email=email
         )
