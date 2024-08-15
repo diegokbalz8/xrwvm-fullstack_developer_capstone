@@ -60,13 +60,14 @@ return(
       <th>Address</th>
       <th>Zip</th>
       <th>
-      <select name="state" id="state" onChange={(e) => filterDealers(e.target.value)}>
+        <input type="text" placeholder="Search states..." onChange={handleInputChange} onBlur={handleLostFocus} value={searchQuery} />
+      {/*<select name="state" id="state" onChange={(e) => filterDealers(e.target.value)}>
       <option value="" selected disabled hidden>State</option>
       <option value="All">All States</option>
       {states.map(state => (
           <option value={state}>{state}</option>
       ))}
-      </select>        
+    </select>*/}        
 
       </th>
       {isLoggedIn ? (
