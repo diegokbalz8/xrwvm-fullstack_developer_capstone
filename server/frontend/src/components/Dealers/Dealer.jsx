@@ -69,6 +69,7 @@ const Dealer = () => {
 
 return(
   <div style={{margin:"20px"}}>
+      <a href={`/searchcars/${id}`}>SearchCars</a>	
       <Header/>
       <div style={{marginTop:"10px"}}>
       <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
